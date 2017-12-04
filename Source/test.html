@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+        <title>Starbucks Index</title>
+        <script src="Assets/geomap/vendor/d3.geomap.dependencies.min.js"></script>
+        <script src="Assets/topojson.min.js"></script>
+        <script src="Assets/datamaps.world.hires.min.js"></script>
+    </head>
+    <body>
+        <div id="container" style="position: relative; width: 100%; height: 100%;"></div>
+        <script type="text/javascript">
+            var allStores;
+            var countryCodes;
+            var countryCount = {};
+            var paletteScale;
+            var dataset = {};
+
+            var map = new Datamap({element: document.getElementById('container'),
+                geographyConfig: {
+                popupTemplate: function(geography, data) {
+                    return '<div class="hoverinfo"><b>' + geography.properties.name + '</b></br>' + 'Amount of Starbucks stores:' +  data.amount + '</div>'
+                }
+            }});
+            
+            d3.csv("Data/starbucks-stores.csv", function(data) {
+                allStores = data;
+            });
+
+            d3.csv("Data/country-codes.csv", function(data) {
+                countryCodes = data;
+            });
+
+            var loadInterval = setInterval(setCountryCodes, 1000);
+
+            function setCountryCodes(){
+                console.log('Loading...');
+                if (allStores !== undefined && countryCodes !== undefined){
+                    for(store in allStores){
+                        var oldCountryCode = allStores[store]['Country'];
+                        var newCountryCode = '';
+                        for(country in countryCodes){
+                            if (countryCodes[country]['ISO3166-1-Alpha-2'] == oldCountryCode){
+                                newCountryCode = countryCodes[country]['ISO3166-1-Alpha-3'];
+                            }
+                        }
+                        allStores[store]['Country3'] = newCountryCode;
+                    }
+                    console.log('Done!');
+                    countStores();
+                    clearInterval(loadInterval);
+                }
+            }
+
+            function countStores(){
+                var max = 1;
+                var min = 1;
+                for(store in allStores){
+                    count = countryCount[allStores[store]['Country3']];
+                    if(count){
+                        count++;
+                        if(count > max){
+                            max = count;
+                        }
+                        if (count < min){
+                            min = count;
+                        }
+                        countryCount[allStores[store]['Country3']] = count;
+                    }
+                    else countryCount[allStores[store]['Country3']] = 1;
+                }
+                setColours(min,max);
+            }
+
+            function setColours(min, max){
+                var paletteScale = d3.scale.linear()
+                    .domain([min,max])
+                    .range(["#EFEFFF","#02386F"]); // blue color
+                updateMap(paletteScale);
+            }
+
+            function updateMap(palette){
+                for(country in countryCount){
+                    var iso = country,
+                        value = countryCount[country];
+                    dataset[iso] = { amount: value, fillColor: palette(value) };
+                }
+                map.updateChoropleth(dataset);
+            }
+        </script>
+    </body>
+</html>
