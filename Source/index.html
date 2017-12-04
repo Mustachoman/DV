@@ -7,11 +7,18 @@
         <script src="Assets/geomap/vendor/d3.geomap.dependencies.min.js"></script>
         <script src="Assets/topojson.min.js"></script>
         <script src="Assets/datamaps.world.hires.min.js"></script>
+        <style type="text/css">
+            @font-face { font-family: Lato; src: url('Assets/Fonts/Lato-Regular.ttf'); } 
+
+            p {
+                font-family: Lato
+            }
+        </style>
     </head>
     <body>
         <div id="header" style="height:179px; width:225px; left:calc(50% - 112.5px); position:relative;">
             <img src="Assets/Images/logo.jpg" style="height:100%; width:100%;">
-            <div style="font-family: 'Lato', sans-serif;">How western is your country?</div>
+            <p>How western is your country?</p>
         </div>
         <div id="map" style="position: relative; width: 1000; height: 750; left:calc(50% - 500px); position:relative;"></div>
         <script type="text/javascript">
@@ -85,7 +92,7 @@
             function setColours(min, max){
                 var paletteScale = d3.scale.log()
                     .domain([min,max])
-                    .range(["#efffef","#00713D"]); // blue color
+                    .range(["#efffef","#00713D"]); 
                 updateMap(paletteScale);
             }
 
