@@ -8,10 +8,8 @@ function loadBar() {
 
         const countryCountValues = Object.values(countryCount).sort(compareNumbers);
         const topCountryValues = countryCountValues.slice(0, 10);
-        console.log(topCountryValues);
 
         const topCountryNames = Object.keys(countryCount).sort((a, b) => { return countryCount[b] - countryCount[a] }).slice(0, 10);
-        console.log(topCountryNames);
 
         countryKeyValue = [];
 
@@ -19,8 +17,6 @@ function loadBar() {
             country = { "key": topCountryNames[i], "value": topCountryValues[i] };
             countryKeyValue.push(country);
         }
-
-        console.log(countryKeyValue);
 
         const margin = {
             top: 15,
@@ -61,7 +57,6 @@ function loadBar() {
         const bars = svg.append("g")
 
         countryKeyValue.forEach((country) => {
-            console.log(country);
             bars.append("rect").attr("class", "bar")
                 .attr("y", y(country.key))
                 .attr("height", y.rangeBand())
