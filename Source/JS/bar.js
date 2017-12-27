@@ -29,7 +29,7 @@ function loadBar() {
             left: 50
         };
 
-        const svg = d3.select(".chart").append("svg")
+        const svg = d3.select(".bar").append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
