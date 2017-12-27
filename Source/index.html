@@ -47,23 +47,18 @@
 </head>
 
 <body>
-    <script type="text/javascript"> 
-        var allStores;
-        var countryCodes;
-        var countryCount = {};
-        var countryCountValues = [];
-        var dataset = {};
-        var palleteScale;
-    </script>
-    <script src="JS/data.js"></script>
+    <script src="JS/countrycodedata.js"></script>
+    <script src="JS/storedata.js"></script>
+    <script src="JS/happinessdata.js"></script>
     <div id="header" style="height:179px; width:225px; left:calc(50% - 112.5px); position:relative;">
         <img src="Assets/Images/logo.jpg" style="height:100%; width:100%;">
     </div>
     <div style="width: 700px; left: calc(50% - 350px); position: relative;">
-        <p style="font-size:26px">How hip is your country?</p>
+        <p style="font-size:26px">How does your country measure on the Starbucks Index?</p>
         <p>
             Starbucks is a staple of the modern world, the Seattle based coffee company is one of the most popular coffee serving stores
-            around the world. Due to it's status Starbucks can be seen as a measurement of how hip and modern a country is.
+            around the world. Due to it's status Starbucks can be seen as a measurement of how rich and modern a country
+            is.
             </br>
             </br>
             But how true is this hypothesis? In this infographic you will be able to compare the amount of Starbucks stores with other
@@ -85,14 +80,18 @@
             Now let's take a look at the GDP of these countries
         </p>
     </div>
+    <div id="gdpmap" style="position: relative; width: 1000px; height: 750px; left:calc(50% - 500px); position:relative;"></div>
     <div style="width: 700px; left: calc(50% - 350px); position: relative;">
         <p>
             Sources used:
+            </br>
             <a href="https://www.kaggle.com/starbucks/store-locations">Starbucks stores</a>
+            </br>
+            <a href="https://www.kaggle.com/unsdsn/world-happiness/data">Happiness Scale / GDP per Capita</a>
         </p>
     </div>
-    <script src="JS/map.js"></script>
-    <script src="JS/bar.js"></script>
+    <script src="JS/storemap.js"></script>
+    <script src="JS/storebar.js"></script>
 </body>
 
 </html>

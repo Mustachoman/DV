@@ -1,4 +1,6 @@
-var map = new Datamap({
+let countMapData = {};
+
+let map = new Datamap({
     element: document.getElementById('map'),
     geographyConfig: {
         popupTemplate: function (geography, data) {
@@ -19,10 +21,10 @@ function setColours(min, max) {
 }
 
 function updateMap(palette) {
-    for (country in countryCount) {
+    for (country in storeCount) {
         var iso = country,
-            value = countryCount[country];
-        dataset[iso] = { amount: value, fillColor: palette(value) };
+            value = storeCount[country];
+        countMapData[iso] = { amount: value, fillColor: palette(value) };
     }
-    map.updateChoropleth(dataset);
+    map.updateChoropleth(countMapData);
 }

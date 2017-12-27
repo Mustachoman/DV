@@ -1,15 +1,16 @@
+let countryCountValues = [];
 const loadBarInterval = setInterval(loadBar, 1000);
 
 const width = 1000,
     height = 500;
 
 function loadBar() {
-    if (countryCount !== undefined) {
+    if (storeCount !== undefined) {
 
-        const countryCountValues = Object.values(countryCount).sort(compareNumbers);
+        const countryCountValues = Object.values(storeCount).sort(compareNumbers);
         const topCountryValues = countryCountValues.slice(0, 10);
 
-        const topCountryNames = Object.keys(countryCount).sort((a, b) => { return countryCount[b] - countryCount[a] }).slice(0, 10);
+        const topCountryNames = Object.keys(storeCount).sort((a, b) => { return storeCount[b] - storeCount[a] }).slice(0, 10);
 
         countryKeyValue = [];
 
