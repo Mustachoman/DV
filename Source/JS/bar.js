@@ -7,17 +7,26 @@ function loadBar() {
     if (countryCount !== undefined) {
 
         const countryCountValues = Object.values(countryCount).sort(compareNumbers);
-        const countryCountValuesTop = countryCountValues.slice(0, 10);
-        console.log(countryCountValuesTop);
+        const topCountryValues = countryCountValues.slice(0, 10);
+        console.log(topCountryValues);
 
-        const topCountries = Object.keys(countryCount).sort((a, b) => { return countryCount[b] - countryCount[a] }).slice(0, 10);
-        console.log(topCountries);
+        const topCountryNames = Object.keys(countryCount).sort((a, b) => { return countryCount[b] - countryCount[a] }).slice(0, 10);
+        console.log(topCountryNames);
+
+        countryKeyValue = [];
+
+        for (let i = 0; i < 10; i++) {
+            country = { "key": topCountryNames[i], "value": topCountryValues[i] };
+            countryKeyValue.push(country);
+        }
+
+        console.log(countryKeyValue);
 
         const margin = {
             top: 15,
-            right: 60,
+            right: 50,
             bottom: 15,
-            left: 10
+            left: 50
         };
 
         const svg = d3.select(".chart").append("svg")
@@ -28,13 +37,13 @@ function loadBar() {
 
         const x = d3.scale.linear()
             .range([0, width])
-            .domain([0, d3.max(countryCountValuesTop, function (d) {
+            .domain([0, d3.max(topCountryValues, function (d) {
                 return d;
             })]);
 
         const y = d3.scale.ordinal()
             .rangeRoundBands([0, height], .1)
-            .domain(Object.keys(countryCountValuesTop));
+            .domain(countryKeyValue.map(function (d) { return d.key; }))
 
         const colorScale = d3.scale.log()
             .domain([Math.min(...countryCountValues), Math.max(...countryCountValues)])
@@ -51,19 +60,20 @@ function loadBar() {
 
         const bars = svg.append("g")
 
-        Object.entries(countryCountValuesTop).forEach(([key, value]) => {
+        countryKeyValue.forEach((country) => {
+            console.log(country);
             bars.append("rect").attr("class", "bar")
-                .attr("y", y(key))
+                .attr("y", y(country.key))
                 .attr("height", y.rangeBand())
                 .attr("x", 0)
-                .attr("width", x(value))
-                .attr("fill", colorScale(value));
+                .attr("width", x(country.value))
+                .attr("fill", colorScale(country.value));
 
             bars.append("text")
                 .attr("class", "label")
-                .attr("y", y(key) + y.rangeBand() / 2 + 4)
-                .attr("x", x(value) + 3)
-                .text(value);
+                .attr("y", y(country.key) + y.rangeBand() / 2 + 4)
+                .attr("x", x(country.value) + 3)
+                .text(country.value);
         })
 
         clearInterval(loadBarInterval);
