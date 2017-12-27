@@ -1,4 +1,4 @@
-let happinesData;
+let happinessData;
 
 d3.csv("Data/2017.csv", function (data) {
     happinessData = data;
@@ -19,6 +19,6 @@ function setHappinessCountryCodes() {
             }
         }
         clearInterval(happinessloadInterval);
-        setGDPColours();
+        extractGDPData();
     }
 }
