@@ -1,23 +1,21 @@
-let countryCountValues = [];
-let loadBarInterval = setInterval(loadBar, 1000);
+let loadGDPBarInterval = setInterval(loadGDPBar, 1000);
 
-let width = 1000,
-    height = 500;
+function loadGDPBar() {
+    if (happinessData !== undefined) {
 
-function loadBar() {
-    if (storeCount !== undefined) {
+        let GDPData = [];
+        let GDPValues = [];
+        let GDPCountries = [];
 
-        let countryCountValues = Object.values(storeCount).sort(compareNumbers);
-        let topCountryValues = countryCountValues.slice(0, 10);
-
-        let topCountryNames = Object.keys(storeCount).sort((a, b) => { return storeCount[b] - storeCount[a] }).slice(0, 10);
-
-        countryKeyValue = [];
-
-        for (let i = 0; i < 10; i++) {
-            country = { "key": topCountryNames[i], "value": topCountryValues[i] };
-            countryKeyValue.push(country);
+        for (country in happinessData) {
+            let iso = happinessData[country]["Country3"],
+                value = happinessData[country]["Economy..GDP.per.Capita."];
+            GDPValues.push(value);
+            GDPCountries.push(iso);
+            GDPData.push({ "key": iso, "value": value });
         }
+
+        GDPData = GDPData.sort(compareValueNumbers).slice(0, 10);
 
         let margin = {
             top: 15,
@@ -26,7 +24,7 @@ function loadBar() {
             left: 50
         };
 
-        let svg = d3.select(".bar").append("svg")
+        let svg = d3.select(".gdpbar").append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
@@ -34,16 +32,16 @@ function loadBar() {
 
         let x = d3.scale.linear()
             .range([0, width])
-            .domain([0, d3.max(topCountryValues, function (d) {
+            .domain([0, d3.max(GDPValues, function (d) {
                 return d;
             })]);
 
         let y = d3.scale.ordinal()
             .rangeRoundBands([0, height], .1)
-            .domain(countryKeyValue.map(function (d) { return d.key; }))
+            .domain(GDPData.map(function (d) { return d.key; }))
 
-        let colorScale = d3.scale.log()
-            .domain([Math.min(...countryCountValues), Math.max(...countryCountValues)])
+        let colorScale = d3.scale.linear()
+            .domain([Math.min(...GDPValues), Math.max(...GDPValues)])
             .range(["#efffef", "#00713D"]);
 
         let yAxis = d3.svg.axis()
@@ -57,7 +55,7 @@ function loadBar() {
 
         let bars = svg.append("g")
 
-        countryKeyValue.forEach((country) => {
+        GDPData.forEach((country) => {
             bars.append("rect").attr("class", "bar")
                 .attr("y", y(country.key))
                 .attr("height", y.rangeBand())
@@ -72,10 +70,10 @@ function loadBar() {
                 .text(country.value);
         })
 
-        clearInterval(loadBarInterval);
+        clearInterval(loadGDPBarInterval);
     }
 }
 
-function compareNumbers(a, b) {
-    return b - a;
+function compareValueNumbers(a, b) {
+    return b.value - a.value;
 }

@@ -16,6 +16,7 @@
 
         p {
             font-family: Lato;
+            font-size: 18px;
         }
     </style>
 
@@ -59,8 +60,8 @@
             Starbucks is a staple of the modern world, the Seattle based coffee company is one of the most popular coffee serving stores
             around the world. Due to it's status Starbucks can be seen as a measurement of how rich and modern a country
             is.
-            </br>
-            </br>
+        </p>
+        <p>
             But how true is this hypothesis? In this infographic you will be able to compare the amount of Starbucks stores with other
             indications of a country's prosperity.
         </p>
@@ -75,24 +76,39 @@
     <div style="width: 700px; left: calc(50% - 350px); position: relative;">
         <p>
             As shown, the USA has almost 5 times as many Starbucks stores as the runner-up China.
-            </br>
-            </br>
-            Now let's take a look at the GDP of these countries
+            <br/>
+            <br/> Now let's take a look at the GDP (per capita) of these countries
         </p>
     </div>
     <div id="gdpmap" style="position: relative; width: 1000px; height: 750px; left:calc(50% - 500px); position:relative;"></div>
+    <div class="gdpbar" style="position: relative; width: 100px; left:calc(50% - 550px); position:relative;"></div>
     <div style="width: 700px; left: calc(50% - 350px); position: relative;">
         <p>
+            Here you can see the USA is placed 9th in GDP per capita even though it is first in amount of Starbucks stores. Perhaps it
+            is unfair to compare a country that has a population of around 325 million with countries that might have way
+            more or less.
+        </p>
+        <p>
+            China has a population of around 1.5 billion and although it's GDP per capita is 1.08, Hong Kong has a GDP per capita higher
+            than that of the USA.
+        </p>
+    </div>
+    <br/>
+    <div style="width: 700px; left: calc(50% - 350px); position: relative;">
+        <p style="font-size:14px">
             Sources used:
-            </br>
+            <br/>
             <a href="https://www.kaggle.com/starbucks/store-locations">Starbucks stores</a>
-            </br>
+            <br/>
             <a href="https://www.kaggle.com/unsdsn/world-happiness/data">Happiness Scale / GDP per Capita</a>
+            <br/>
+            <a href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)">Population Count (used in text)</a>
         </p>
     </div>
     <script src="JS/storemap.js"></script>
     <script src="JS/storebar.js"></script>
     <script src="JS/gdpmap.js"></script>
+    <script src="JS/gdpbar.js"></script>
 </body>
 
 </html>

@@ -22,7 +22,6 @@ function extractGDPData() {
 }
 
 function setGDPColours(min, max) {
-    console.log(min, max);
     var paletteScale = d3.scale.linear()
         .domain([min, max])
         .range(["#efffef", "#00713D"]);
@@ -33,8 +32,6 @@ function updateGDPMap(palette) {
     for (country in happinessData) {
         var iso = happinessData[country]["Country3"],
             value = happinessData[country]["Economy..GDP.per.Capita."];
-
-        console.log(palette(value));
         gdpMapData[iso] = { amount: value, fillColor: palette(value) };
     }
     gdpmap.updateChoropleth(gdpMapData);
