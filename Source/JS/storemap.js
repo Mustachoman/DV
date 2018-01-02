@@ -1,10 +1,11 @@
 let countMapData = {};
+let lastDataSet = {};
 
 let map = new Datamap({
-    element: document.getElementById('map'),
+    element: document.getElementById('storemap'),
     geographyConfig: {
         popupTemplate: function (geography, data) {
-            return '<div class="hoverinfo"><b>' + geography.properties.name + '</b></br>' + 'Amount of Starbucks stores:' + data.amount + '</div>'
+            return '<div class="hoverinfo"><b>' + geography.properties.name + '</b></br>' + 'Amount of Starbucks stores ' + (lastDataSet == storeCountPerCapita ? '(per 100.000 people):' : '') + data.amount + '</div>'
         }
     },
     fills: {
@@ -13,18 +14,19 @@ let map = new Datamap({
     projection: 'mercator'
 });
 
-function setColours(min, max) {
-    var paletteScale = d3.scale.log()
-        .domain([min, max])
-        .range(["#efffef", "#00713D"]);
-    updateMap(paletteScale);
-}
+function updateStoreMap(dataset) {
+    lastDataSet = dataset;
 
-function updateMap(palette) {
-    for (country in storeCount) {
+    var paletteScale = d3.scale.log()
+        .domain([Math.min(...Object.values(dataset)), Math.max(...Object.values(dataset))])
+        .range(["#efffef", "#00713D"]);
+
+    for (country in dataset) {
         var iso = country,
-            value = storeCount[country];
-        countMapData[iso] = { amount: value, fillColor: palette(value) };
+            value = dataset[country];
+        countMapData[iso] = { amount: value, fillColor: paletteScale(value) };
     }
+
     map.updateChoropleth(countMapData);
+    updateStoreBar(dataset);
 }

@@ -8,6 +8,8 @@
     <script src="Assets/geomap/vendor/d3.geomap.dependencies.min.js"></script>
     <script src="Assets/topojson.min.js"></script>
     <script src="Assets/datamaps.world.hires.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+        crossorigin="anonymous">
     <style type="text/css">
         @font-face {
             font-family: Lato;
@@ -18,9 +20,7 @@
             font-family: Lato;
             font-size: 18px;
         }
-    </style>
 
-    <style>
         .bar div {
             font: 10px sans-serif;
             background-color: #00713D;
@@ -44,6 +44,13 @@
             font-family: Lato;
             font-size: 13px;
         }
+
+        button {
+            background-color: #00713D;
+            /* position: absolute; */
+            width: 250px;
+            left: calc(50% - 125px);
+        }
     </style>
 </head>
 
@@ -51,6 +58,7 @@
     <script src="JS/countrycodedata.js"></script>
     <script src="JS/storedata.js"></script>
     <script src="JS/happinessdata.js"></script>
+    <script src="JS/population.js"></script>
     <div id="header" style="height:179px; width:225px; left:calc(50% - 112.5px); position:relative;">
         <img src="Assets/Images/logo.jpg" style="height:100%; width:100%;">
     </div>
@@ -66,27 +74,30 @@
             indications of a country's prosperity.
         </p>
     </div>
-    <div id="map" style="position: relative; width: 1000px; height: 750px; left:calc(50% - 500px); position:relative;"></div>
+    <div id="storemap" style="position: relative; width: 1000px; height: 750px; left:calc(50% - 500px); position:relative;"></div>
     <div style="width: 700px; left: calc(50% - 350px); position: relative;">
         <p>
             Let's put these numbers into a better perspective.
         </p>
     </div>
-    <div class="bar" style="position: relative; width: 100px; left:calc(50% - 550px); position:relative;"></div>
+    <div class="storebar" style="position: relative; width: 100px; left:calc(50% - 550px); position:relative;"></div>
     <div style="width: 700px; left: calc(50% - 350px); position: relative;">
         <p>
             As shown, the USA has almost 5 times as many Starbucks stores as the runner-up China.
             <br/>
-            <br/> Now let's take a look at the GDP (per capita) of these countries
+            <br/> However China has a population of 1.3 billion and the USA 323 million. Try pressing the button to switch between
+            the amount of stores and how many stores there are per 100.000 people.
         </p>
+        <button type="button" onclick="switchStoreDataSet()" class="btn btn-dark">Switch Per Capita</button>
+
     </div>
     <div id="gdpmap" style="position: relative; width: 1000px; height: 750px; left:calc(50% - 500px); position:relative;"></div>
     <div class="gdpbar" style="position: relative; width: 100px; left:calc(50% - 550px); position:relative;"></div>
     <div style="width: 700px; left: calc(50% - 350px); position: relative;">
         <p>
-            Here you can see the USA is placed 9th in GDP per capita even though it is first in amount of Starbucks stores. Perhaps it
-            is unfair to compare a country that has a population of around 325 million with countries that might have way
-            more or less.
+            Here you can see the USA is placed 8th in GDP per capita even though it has the most amount of Starbucks stores. Perhaps
+            it is unfair to compare a country that has a population of around 325 million with countries that might have
+            way more or less.
         </p>
         <p>
             China has a population of around 1.5 billion and although it's GDP per capita is 1.08, Hong Kong has a GDP per capita higher

@@ -1,5 +1,6 @@
 let allStores;
 let storeCount = {};
+let storeCountPerCapita = {};
 
 d3.csv("Data/starbucks-stores.csv", function (data) {
     allStores = data;
@@ -41,5 +42,26 @@ function countStores() {
         }
         else storeCount[allStores[store]['Country3']] = 1;
     }
-    setColours(min, max);
+    calcStorePerCapita();
+    updateStoreMap(storeCount);
+}
+
+function calcStorePerCapita() {
+    for (country in storeCount) {
+        let countryPopulation;
+        population.forEach((pop) => {
+            if (pop['Country Code'] == country) {
+                countryPopulation = pop['2016'];
+            }
+        });
+        let perCapitaValue = storeCount[country] / countryPopulation * 100000;
+        storeCountPerCapita[country] = perCapitaValue.toFixed(2);
+    }
+}
+
+function switchStoreDataSet() {
+    if (lastDataSet == storeCount) {
+        updateStoreMap(storeCountPerCapita);
+    }
+    else updateStoreMap(storeCount);
 }
