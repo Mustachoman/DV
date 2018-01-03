@@ -51,6 +51,14 @@
             width: 250px;
             left: calc(50% - 125px);
         }
+
+        #nud {
+            position: relative;
+            width: 100px;
+            left: calc(50% - 110px);
+            float: left;
+            margin: 5px;
+        }
     </style>
 </head>
 
@@ -127,6 +135,31 @@
         <button type="button" onclick="switchGDPDataSet()" class="btn btn-dark">Switch Per Capita</button>
     </div>
 
+    <div style="width: 700px; left: calc(50% - 350px); position: relative;">
+        <p style="font-size:22px">Compare</p>
+        <p>
+            Play around with certain settings to create your own Starbucks Index and see how your own country does.
+        </p>
+    </div>
+
+    <div style="height:750px; width:1000px; left:calc(50% - 500px); position:relative;">
+        <div id="nud">
+            <label for="nudStores">Store Count</label>
+            <input type="number" class="form-control" id="nudStores" style="width:100px" value="1" min="0" />
+        </div>
+        <div id="nud">
+            <label for="nudGDP">GDP</label>
+            <input type="number" class="form-control" id="nudGDP" style="width:100px" value="1" min="0" />
+        </div>
+
+        <div style="clear:left; padding:10px">
+            <button type="button" onclick="updatecompareMap()" class="btn btn-dark">Show scores</button>
+        </div>
+
+        <div id="comparemap" style="width: 1000px; height: 750px; float:left"></div>
+        <!-- <div class="gdpbar" style="width: 700px; height: 500px; float:left"></div> -->
+    </div>
+
     <br/>
     <div style="width: 700px; left: calc(50% - 350px); position: relative;">
         <p style="font-size:14px">
@@ -145,6 +178,7 @@
     <script src="JS/storebar.js"></script>
     <script src="JS/gdpmap.js"></script>
     <script src="JS/gdpbar.js"></script>
+    <script src="JS/comparemap.js"></script>
 </body>
 
 </html>
