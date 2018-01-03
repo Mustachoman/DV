@@ -5,7 +5,7 @@ let gdpmap = new Datamap({
     element: document.getElementById('gdpmap'),
     geographyConfig: {
         popupTemplate: function (geography, data) {
-            return '<div class="hoverinfo"><b>' + geography.properties.name + '</b></br>' + 'GDP' + (lastGDPDataSet == countryGDPPerCapita ? ' (per 1.000 people)' : '') + ": " + data.amount + '</div>'
+            return '<div class="hoverinfo"><b>' + geography.properties.name + '</b></br>' + 'GDP (in millions)' + (lastGDPDataSet == countryGDPPerCapita ? ' (per 1.000 people)' : '') + ": " + data.amount + '</div>'
         }
     },
     fills: {

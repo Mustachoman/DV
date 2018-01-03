@@ -67,7 +67,8 @@ function loadGDPBar(GDPdataset) {
             .attr("class", "label")
             .attr("y", y(country.key) + y.rangeBand() / 2 + 4)
             .attr("x", x(country.value) + 3)
-            .text(country.value);
+            .text(country.value)
+            .attr("title", country.value);
     })
 }
 
