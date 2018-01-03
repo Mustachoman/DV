@@ -1,11 +1,11 @@
 let countMapData = {};
-let lastDataSet = {};
+let lastStoreDataSet = {};
 
 let map = new Datamap({
     element: document.getElementById('storemap'),
     geographyConfig: {
         popupTemplate: function (geography, data) {
-            return '<div class="hoverinfo"><b>' + geography.properties.name + '</b></br>' + 'Amount of Starbucks stores ' + (lastDataSet == storeCountPerCapita ? '(per 100.000 people):' : '') + data.amount + '</div>'
+            return '<div class="hoverinfo"><b>' + geography.properties.name + '</b></br>' + 'Amount of Starbucks stores' + (lastDataSet == storeCountPerCapita ? ' (per 100.000 people)' : '') + ": " + data.amount + '</div>'
         }
     },
     fills: {

@@ -4,7 +4,7 @@ d3.csv("Data/2017.csv", function (data) {
     happinessData = data;
 });
 
-let happinessloadInterval = setInterval(setHappinessCountryCodes, 1000);
+// let happinessloadInterval = setInterval(setHappinessCountryCodes, 1000);
 
 function setHappinessCountryCodes() {
     let indexesToRemove = [];
@@ -28,5 +28,5 @@ function setHappinessCountryCodes() {
         }
     }
     clearInterval(happinessloadInterval);
-    extractGDPData();
+    // extractGDPData();
 }

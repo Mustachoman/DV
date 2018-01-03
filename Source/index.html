@@ -57,8 +57,9 @@
 <body>
     <script src="JS/countrycodedata.js"></script>
     <script src="JS/storedata.js"></script>
-    <script src="JS/happinessdata.js"></script>
-    <script src="JS/population.js"></script>
+    <!-- <script src="JS/happinessdata.js"></script> -->
+    <script src="JS/populationdata.js"></script>
+    <script src="JS/gdpdata.js"></script>
     <div id="header" style="height:179px; width:225px; left:calc(50% - 112.5px); position:relative;">
         <img src="Assets/Images/logo.jpg" style="height:100%; width:100%;">
     </div>
@@ -74,15 +75,19 @@
             indications of a country's prosperity.
         </p>
     </div>
+
     <div style="width: 700px; left: calc(50% - 350px); position: relative;">
+        <p style="font-size:22px">Amount of Starbucks Stores</p>
         <p>
             First let's take a look at the amount of Starbucks stores each country has.
         </p>
     </div>
+
     <div style="height:500px; width:1500px; left:calc(50% - 750px); position:relative;">
         <div id="storemap" style="width: 700px; height: 500px; float:left"></div>
         <div class="storebar" style="width: 700px; height: 500px; float:left"></div>
     </div>
+
     <div style="width: 700px; left: calc(50% - 350px); position: relative;">
         <p id="storeText">
             As shown, the USA has almost 5 times as many Starbucks stores as the runner-up China.
@@ -91,10 +96,25 @@
             the amount of stores and see how many stores there are per 100.000 people.
         </p>
         <button type="button" onclick="switchStoreDataSet()" class="btn btn-dark">Switch Per Capita</button>
-
     </div>
-    <div id="gdpmap" style="position: relative; width: 1000px; height: 750px; left:calc(50% - 500px); position:relative;"></div>
-    <div class="gdpbar" style="position: relative; width: 100px; left:calc(50% - 550px); position:relative;"></div>
+
+    <div style="width: 700px; left: calc(50% - 350px); position: relative;">
+        <p style="font-size:22px">GDP</p>
+        <p>
+            An indication of a countries wealth is the Gross Domestic Product or GDP for short. GDP is a measurement of all final goods
+            and services of a country and is used to determine the economic performance.
+            <a href="https://en.wikipedia.org/wiki/Gross_domestic_product">(Wikipedia)</a>
+            <br/> Below you can see the GDP all countries that have Starbucks stores.
+            <br/>
+            <br/> Like above, you can press the button below to change to GDP per capita.
+        </p>
+    </div>
+
+    <div style="height:500px; width:1500px; left:calc(50% - 750px); position:relative;">
+        <div id="gdpmap" style="width: 700px; height: 500px; float:left"></div>
+        <div class="gdpbar" style="width: 700px; height: 500px; float:left"></div>
+    </div>
+
     <div style="width: 700px; left: calc(50% - 350px); position: relative;">
         <p>
             Here you can see the USA is placed 8th in GDP per capita even though it has the most amount of Starbucks stores. Perhaps
@@ -105,7 +125,9 @@
             China has a population of around 1.5 billion and although it's GDP per capita is 1.08, Hong Kong has a GDP per capita higher
             than that of the USA.
         </p>
+        <button type="button" onclick="switchGDPDataSet()" class="btn btn-dark">Switch Per Capita</button>
     </div>
+
     <br/>
     <div style="width: 700px; left: calc(50% - 350px); position: relative;">
         <p style="font-size:14px">
@@ -113,9 +135,11 @@
             <br/>
             <a href="https://www.kaggle.com/starbucks/store-locations">Starbucks stores</a>
             <br/>
-            <a href="https://www.kaggle.com/unsdsn/world-happiness/data">Happiness Scale / GDP per Capita</a>
+            <a href="https://www.kaggle.com/unsdsn/world-happiness/data">Happiness Scale</a>
             <br/>
-            <a href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)">Population Count (used in text)</a>
+            <a href="https://www.kaggle.com/centurion1986/world-population/data ">Population Count</a>
+            <br/>
+            <a href="https://www.kaggle.com/shinydhar/gdp-world/data ">World GDP</a>
         </p>
     </div>
     <script src="JS/storemap.js"></script>

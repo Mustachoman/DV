@@ -1,0 +1,218 @@
+﻿Country Code,Position,Economy,GDP
+USA,1,United States,18624475
+CHN,2,China,11199145
+JPN,3,Japan,4940159
+DEU,4,Germany,3477796
+GBR,5,United Kingdom,2647899
+FRA,6,France,2465454
+IND,7,India,2263792
+ITA,8,Italy,1858913
+BRA,9,Brazil,1796187
+CAN,10,Canada,1529760
+KOR,11,"Korea, Rep.",1411246
+RUS,12,Russian Federation,1283163
+ESP,13,Spain,1237255
+AUS,14,Australia,1204616
+MEX,15,Mexico,1046923
+IDN,16,Indonesia,932259
+TUR,17,Turkey,863712
+NLD,18,Netherlands,777228
+CHE,19,Switzerland,668851
+SAU,20,Saudi Arabia,646438
+ARG,21,Argentina,545476
+SWE,22,Sweden,514460
+POL,23,Poland,471364
+BEL,24,Belgium,467956
+IRN,25,"Iran, Islamic Rep.",418977
+THA,26,Thailand,407026
+NGA,27,Nigeria,404653
+AUT,28,Austria,390800
+NOR,29,Norway,371076
+ARE,30,United Arab Emirates,348743
+EGY,31,"Egypt, Arab Rep.",332791
+HKG,32,"Hong Kong SAR, China",320914
+ISR,33,Israel,317745
+DNK,34,Denmark,306900
+PHL,35,Philippines,304905
+IRL,36,Ireland,304819
+SGP,37,Singapore,296976
+MYS,38,Malaysia,296536
+ZAF,39,South Africa,295456
+COL,40,Colombia,282463
+PAK,41,Pakistan,278913
+CHL,42,Chile,247028
+FIN,43,Finland,238503
+BGD,44,Bangladesh,221415
+VNM,45,Vietnam,205276
+PRT,46,Portugal,204837
+CZE,47,Czech Republic,195305
+GRC,48,Greece,192691
+PER,49,Peru,192207
+ROU,50,Romania,187592
+NZL,51,New Zealand,184969
+IRQ,52,Iraq,171489
+DZA,53,Algeria,159049
+QAT,54,Qatar,152452
+KAZ,55,Kazakhstan,137278
+HUN,56,Hungary,125817
+KWT,57,Kuwait,110876
+MAR,58,Morocco,103606
+ECU,59,Ecuador,98614
+SDN,60,Sudan,95584
+AGO,61,Angola,95335
+UKR,62,Ukraine,93270
+SVK,63,Slovak Republic,89769
+CUB,64,Cuba,87133
+LKA,65,Sri Lanka,81322
+ETH,66,Ethiopia,72374
+DOM,67,Dominican Republic,71584
+KEN,68,Kenya,70529
+GTM,69,Guatemala,68763
+UZB,70,Uzbekistan,67220
+OMN,71,Oman,66293
+MMR,72,Myanmar,63225
+LUX,73,Luxembourg,58631
+CRI,74,Costa Rica,57436
+PAN,75,Panama,55188
+BGR,76,Bulgaria,53238
+URY,77,Uruguay,52420
+HRV,78,Croatia,50715
+LBN,79,Lebanon,49599
+BLR,80,Belarus,47407
+TZA,81,Tanzania,47340
+MAC,82,"Macao SAR, China",44803
+SVN,83,Slovenia,44709
+LTU,84,Lithuania,42739
+GHA,85,Ghana,42690
+TUN,86,Tunisia,42063
+JOR,87,Jordan,38655
+SRB,88,Serbia,38300
+AZE,89,Azerbaijan,37848
+CIV,90,Côte d'Ivoire,36373
+TKM,91,Turkmenistan,36180
+BOL,92,Bolivia,33806
+CMR,93,Cameroon,32217
+BHR,94,Bahrain,32179
+COD,95,"Congo, Dem. Rep.",31931
+LVA,96,Latvia,27573
+PRY,97,Paraguay,27424
+YEM,98,"Yemen, Rep.",27318
+SLV,99,El Salvador,26797
+UGA,100,Uganda,24079
+EST,101,Estonia,23338
+TTO,102,Trinidad and Tobago,21895
+HND,103,Honduras,21517
+NPL,104,Nepal,21132
+ZMB,105,Zambia,21064
+PNG,106,Papua New Guinea,20213
+ISL,107,Iceland,20047
+CYP,108,Cyprus,20047
+KHM,109,Cambodia,20017
+AFG,110,Afghanistan,19469
+BIH,111,Bosnia and Herzegovina,16910
+ZWE,112,Zimbabwe,16620
+LAO,113,Lao PDR,15903
+BWA,114,Botswana,15581
+SEN,115,Senegal,14684
+GEO,116,Georgia,14378
+GAB,117,Gabon,14214
+JAM,118,Jamaica,14057
+MLI,119,Mali,14035
+PSE,120,West Bank and Gaza,13397
+NIC,121,Nicaragua,13231
+MUS,122,Mauritius,12168
+ALB,123,Albania,11864
+BFA,124,Burkina Faso,11693
+BRN,125,Brunei Darussalam,11401
+BHS,126,"Bahamas, The",11262
+MNG,127,Mongolia,11183
+MOZ,128,Mozambique,11015
+MLT,129,Malta,10999
+NAM,130,Namibia,10948
+MKD,131,"Macedonia, FYR",10900
+GNQ,132,Equatorial Guinea,10685
+ARM,133,Armenia,10572
+MDG,134,Madagascar,10001
+TCD,135,Chad,9601
+SSD,136,South Sudan,9015
+BEN,137,Benin,8583
+RWA,138,Rwanda,8376
+GIN,139,Guinea,8200
+HTI,140,Haiti,8023
+COG,141,"Congo, Rep.",7834
+NER,142,Niger,7528
+TJK,143,Tajikistan,6952
+IMN,144,Isle of Man,6792
+MDA,145,Moldova,6750
+XKX,146,Kosovo,6650
+KGZ,147,Kyrgyz Republic,6551
+LIE,148,Liechtenstein,6289
+SOM,149,Somalia,6217
+GUM,150,Guam,5793
+MWI,151,Malawi,5433
+MRT,152,Mauritania,4739
+FJI,153,Fiji,4704
+BRB,154,Barbados,4529
+TGO,155,Togo,4400
+MNE,156,Montenegro,4374
+MDV,157,Maldives,4224
+VIR,158,Virgin Islands (U.S.),3765
+SLE,159,Sierra Leone,3737
+SWZ,160,Swaziland,3721
+GUY,161,Guyana,3502
+SUR,162,Suriname,3278
+BDI,163,Burundi,3007
+AND,164,Andorra,2859
+FRO,165,Faroe Islands,2477
+LSO,166,Lesotho,2291
+GRL,167,Greenland,2220
+BTN,168,Bhutan,2213
+LBR,169,Liberia,2101
+TLS,170,Timor-Leste,1783
+CAF,171,Central African Republic,1756
+BLZ,172,Belize,1741
+DJI,173,Djibouti,1727
+LCA,174,St. Lucia,1667
+CPV,175,Cabo Verde,1617
+SMR,176,San Marino,1591
+ATG,177,Antigua and Barbuda,1460
+SYC,178,Seychelles,1427
+MNP,179,Northern Mariana Islands,1242
+SLB,180,Solomon Islands,1202
+GNB,181,Guinea-Bissau,1165
+GRD,182,Grenada,1056
+GMB,183,"Gambia, The",965
+KNA,184,St. Kitts and Nevis,910
+WSM,185,Samoa,786
+VUT,186,Vanuatu,774
+VCT,187,St. Vincent and the Grenadines,768
+ASM,188,American Samoa,658
+COM,189,Comoros,617
+DMA,190,Dominica,581
+TON,191,Tonga,402
+STP,192,São Tomé and Principe,343
+FSM,193,"Micronesia, Fed. Sts.",330
+PLW,194,Palau,310
+MHL,195,Marshall Islands,194
+KIR,196,Kiribati,182
+NRU,197,Nauru,102
+TUV,198,Tuvalu,34
+ABW,,Aruba,
+BMU,,Bermuda,
+VGB,,British Virgin Islands,
+CYM,,Cayman Islands,
+CHI,,Channel Islands,
+CUW,,Curaçao,
+ERI,,Eritrea,
+PYF,,French Polynesia,
+GIB,,Gibraltar,
+PRK,,"Korea, Dem. People's Rep.",
+LBY,,Libya,
+MCO,,Monaco,
+NCL,,New Caledonia,
+PRI,,Puerto Rico,
+SXM,,Sint Maarten (Dutch part),
+MAF,,St. Martin (French part),
+SYR,,Syrian Arab Republic,
+TCA,,Turks and Caicos Islands,
+VEN,,"Venezuela, RB",

@@ -1,5 +1,3 @@
-let countryCountValues = [];
-
 let width = 700,
     height = 475;
 
@@ -8,7 +6,6 @@ function updateStoreBar(dataset) {
 }
 
 function loadBar(dataset) {
-
     d3.select('.storebar').selectAll('svg').remove();
 
     let countryCountValues = Object.values(dataset).sort(compareNumbers);
@@ -19,7 +16,7 @@ function loadBar(dataset) {
     countryKeyValue = [];
 
     for (let i = 0; i < 10; i++) {
-        country = { "key": topCountryNames[i], "value": topCountryValues[i] };
+        let country = { "key": topCountryNames[i], "value": topCountryValues[i] };
         countryKeyValue.push(country);
     }
 
@@ -38,7 +35,7 @@ function loadBar(dataset) {
 
     let x = d3.scale.linear()
         .range([0, width])
-        .domain([0, d3.max(topCountryValues, function (d) {
+        .domain([0, d3.max(countryCountValues, function (d) {
             return d;
         })]);
 

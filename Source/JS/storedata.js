@@ -1,4 +1,4 @@
-let allStores;
+let allStores = [];
 let storeCount = {};
 let storeCountPerCapita = {};
 
