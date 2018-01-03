@@ -1,7 +1,7 @@
 let countryCountValues = [];
 
-let width = 1000,
-    height = 500;
+let width = 700,
+    height = 475;
 
 function updateStoreBar(dataset) {
     loadBar(dataset);

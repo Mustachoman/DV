@@ -46,8 +46,8 @@
         }
 
         button {
-            background-color: #00713D;
-            /* position: absolute; */
+            background-color: #00713D !important;
+            position: relative;
             width: 250px;
             left: calc(50% - 125px);
         }
@@ -74,19 +74,21 @@
             indications of a country's prosperity.
         </p>
     </div>
-    <div id="storemap" style="position: relative; width: 1000px; height: 750px; left:calc(50% - 500px); position:relative;"></div>
     <div style="width: 700px; left: calc(50% - 350px); position: relative;">
         <p>
-            Let's put these numbers into a better perspective.
+            First let's take a look at the amount of Starbucks stores each country has.
         </p>
     </div>
-    <div class="storebar" style="position: relative; width: 100px; left:calc(50% - 550px); position:relative;"></div>
+    <div style="height:500px; width:1500px; left:calc(50% - 750px); position:relative;">
+        <div id="storemap" style="width: 700px; height: 500px; float:left"></div>
+        <div class="storebar" style="width: 700px; height: 500px; float:left"></div>
+    </div>
     <div style="width: 700px; left: calc(50% - 350px); position: relative;">
-        <p>
+        <p id="storeText">
             As shown, the USA has almost 5 times as many Starbucks stores as the runner-up China.
             <br/>
             <br/> However China has a population of 1.3 billion and the USA 323 million. Try pressing the button to switch between
-            the amount of stores and how many stores there are per 100.000 people.
+            the amount of stores and see how many stores there are per 100.000 people.
         </p>
         <button type="button" onclick="switchStoreDataSet()" class="btn btn-dark">Switch Per Capita</button>
 

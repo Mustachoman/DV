@@ -62,6 +62,20 @@ function calcStorePerCapita() {
 function switchStoreDataSet() {
     if (lastDataSet == storeCount) {
         updateStoreMap(storeCountPerCapita);
+        changeStoreText(storeCountPerCapita);
     }
-    else updateStoreMap(storeCount);
+    else {
+        updateStoreMap(storeCount);
+        changeStoreText(storeCount);
+    }
+}
+
+function changeStoreText(dataset) {
+    let newText = "";
+    if (dataset == storeCount) {
+        newText = "As shown, the USA has almost 5 times as many Starbucks stores as the runner-up China. <br/> <br/> However China has a population of 1.3 billion and the USA 323 million. Try pressing the button to switch between the amount of stores and see how many stores there are per 100.000 people."
+    }
+    else newText = "The country with the most Starbucks stores per 100.000 inhabitants is Monaco! <br/> <br/> Making the USA the country with the second most Starbucks stores per (100.000) capita. Which is not as suprising seeing that Manaco has 38.500 people living there."
+
+    d3.select("#storeText").html(newText);
 }
