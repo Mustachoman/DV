@@ -4,7 +4,7 @@ let comparemap = new Datamap({
     element: document.getElementById('comparemap'),
     geographyConfig: {
         popupTemplate: function (geography, data) {
-            return '<div class="hoverinfo"><b>' + geography.properties.name + '</b></div>'
+            return '<div class="hoverinfo"><b>' + geography.properties.name + '</b><br/>' + 'Starbucks score: ' + data.amount + '</div>'
         }
     },
     fills: {
@@ -26,10 +26,11 @@ function updatecompareMap() {
         countryName = store['Country3'];
         let storeScore = storeScoreArray.indexOf(countryName) * storeModifier;
         let gdpScore = gdpScoreArray.indexOf(countryName) * gdpModifier;
-        starbucksScore[countryName] = storeScore + gdpScore;
+        let countryScore = storeScore + gdpScore
+        starbucksScore[countryName] = countryScore.toFixed(2);
     });
 
-    var paletteScale = d3.scale.log()
+    var paletteScale = d3.scale.linear()
         .domain([Math.min(...Object.values(starbucksScore)), Math.max(...Object.values(starbucksScore))])
         .range(["#efffef", "#00713D"]);
 
@@ -39,7 +40,5 @@ function updatecompareMap() {
         compareData[iso] = { amount: value, fillColor: paletteScale(value) };
     }
 
-    comparemap.updateChoropleth(countMapData);
-
-    console.log(starbucksScore);
+    comparemap.updateChoropleth(compareData);
 }

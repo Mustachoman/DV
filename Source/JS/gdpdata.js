@@ -28,7 +28,7 @@ function calcGDPPerCapita() {
                 countryPopulation = pop['2016'];
             }
         });
-        let perCapitaValue = countryGDP[country] / countryPopulation * 1000;
+        let perCapitaValue = countryGDP[country] / countryPopulation * 100000;
         countryGDPPerCapita[country] = perCapitaValue.toFixed(2);
     }
 }
@@ -49,7 +49,7 @@ function changeGDPText(GDPDataset) {
     if (GDPDataset == countryGDP) {
         newText = "Here you can see the USA is also leading in their GDP, scoring around 18.5 trillion USD. With China again coming in second with 11.2 trillion USD. <br/><br/> So again, the USA and China are leading! <br/><br/> Let's try changing to GDP per capita en see what changes.";
     }
-    else newText = "Luxemburg might be a small country but it has the most GDP per 1.000 capita. Switzerland coming in second.<br/><br/> USA, leading in amount of Starbucks and in GDP actually is placed 6th.";
+    else newText = "Luxemburg might be a small country but it has the most GDP per 100.000 capita. Switzerland coming in second.<br/><br/> USA, leading in amount of Starbucks and in GDP actually is placed 6th.";
 
     d3.select("#gdpText").html(newText);
 }
