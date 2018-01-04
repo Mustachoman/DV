@@ -9,7 +9,7 @@ d3.csv("Data/starbucks-stores.csv", function (data) {
 const loadInterval = setInterval(setCountryCodes, 1000);
 
 function setCountryCodes() {
-    if (allStores !== undefined && countryCodes !== undefined) {
+    if (allStores && population && storeCount && countryCodes) {
         for (store in allStores) {
             let oldCountryCode = allStores[store]['Country'];
             let newCountryCode = '';

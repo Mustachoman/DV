@@ -9,7 +9,7 @@ d3.csv("Data/GDP.csv", function (data) {
 const loadGDP = setInterval(setGDPs, 1000);
 
 function setGDPs() {
-    if (gdpdata && countryGDP && countryGDPPerCapita && storeCount) {
+    if (gdpdata && population && storeCount && countryCodes) {
         for (country in gdpdata) {
             if (Object.keys(storeCount).indexOf(gdpdata[country]['Country Code']) > -1)
                 countryGDP[gdpdata[country]['Country Code']] = gdpdata[country]['GDP']
