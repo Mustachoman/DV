@@ -17,7 +17,7 @@ let gdpmap = new Datamap({
 function updateGDPMap(GDPdataset) {
     lastGDPDataSet = GDPdataset;
 
-    var paletteScale = d3.scale.linear()
+    var paletteScale = d3.scale.log()
         .domain([Math.min(...Object.values(GDPdataset)), Math.max(...Object.values(GDPdataset))])
         .range(["#efffef", "#00713D"]);
 

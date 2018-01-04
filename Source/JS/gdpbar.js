@@ -40,7 +40,7 @@ function loadGDPBar(GDPdataset) {
         .rangeRoundBands([0, height], .1)
         .domain(countryGDPKeyValue.map(function (d) { return d.key; }))
 
-    let colorScale = d3.scale.linear()
+    let colorScale = d3.scale.log()
         .domain([Math.min(...countryGDPValues), Math.max(...countryGDPValues)])
         .range(["#efffef", "#00713D"]);
 
