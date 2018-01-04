@@ -1,3 +1,7 @@
+function isEmpty(obj) {
+    return Object.keys(obj).length === 0;
+}
+
 function orderObject(object) {
     let orderedKeys = Object.keys(object).sort();
     let orderedObject = {};

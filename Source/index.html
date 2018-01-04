@@ -38,6 +38,23 @@
         .axis line {
             fill: none;
             display: none;
+            shape-rendering: crispEdges;
+            stroke: black;
+        }
+
+        circle {
+            fill: steelblue;
+        }
+
+        .dot {
+            stroke: #000;
+        }
+
+        .tooltip {
+            position: absolute;
+            width: 200px;
+            height: 28px;
+            pointer-events: none;
         }
 
         text {
@@ -139,6 +156,23 @@
     </div>
 
     <div style="width: 700px; left: calc(50% - 350px); position: relative;">
+        <p style="font-size:22px">Stores vs GDP</p>
+        <p>
+            Let's see what happens when you compare these values.
+        </p>
+    </div>
+
+    <div style="height:500px; width:1000px; left:calc(50% - 500px); position:relative;">
+        <div id="storegdpscatter" style="height: 500px; float:left"></div>
+    </div>
+
+    <div style="width: 700px; left: calc(50% - 350px); position: relative;">
+        <p>
+            You can see that there is a positive correlation between the amount of Starbucks stores and the GDP of a country.
+        </p>
+    </div>
+
+    <div style="width: 700px; left: calc(50% - 350px); position: relative;">
         <p style="font-size:22px">Compare</p>
         <p>
             Play around with certain settings to create your own Starbucks Index and see how your own country does.
@@ -181,6 +215,7 @@
     <script src="JS/storebar.js"></script>
     <script src="JS/gdpmap.js"></script>
     <script src="JS/gdpbar.js"></script>
+    <script src="JS/storegdpscatter.js"></script>
     <script src="JS/comparemap.js"></script>
     <script src="JS/comparebar.js"></script>
 </body>
