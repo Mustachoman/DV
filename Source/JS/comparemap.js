@@ -41,4 +41,5 @@ function updatecompareMap() {
     }
 
     comparemap.updateChoropleth(compareData);
+    updateCompareBar(starbucksScore);
 }
