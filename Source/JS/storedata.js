@@ -1,12 +1,5 @@
-let allStores = [];
 let storeCount = {};
 let storeCountPerCapita = {};
-
-d3.csv("Data/starbucks-stores.csv", function (data) {
-    allStores = data;
-});
-
-const loadInterval = setInterval(setCountryCodes, 1000);
 
 function setCountryCodes() {
     if (allStores && population && storeCount && countryCodes) {
@@ -21,7 +14,6 @@ function setCountryCodes() {
             allStores[store]['Country3'] = newCountryCode;
         }
         countStores();
-        clearInterval(loadInterval);
     }
 }
 

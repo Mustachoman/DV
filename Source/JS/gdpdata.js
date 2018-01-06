@@ -1,12 +1,5 @@
-let gdpdata = [];
 let countryGDP = {};
 let countryGDPPerCapita = {};
-
-d3.csv("Data/GDP.csv", function (data) {
-    gdpdata = data;
-});
-
-const loadGDP = setInterval(setGDPs, 1000);
 
 function setGDPs() {
     if (gdpdata && population && storeCount && countryCodes) {
@@ -16,7 +9,6 @@ function setGDPs() {
         }
         calcGDPPerCapita();
         updateGDPMap(countryGDP);
-        clearInterval(loadGDP);
     }
 }
 
