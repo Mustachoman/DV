@@ -71,7 +71,7 @@ function loadStoreGDPScatter() {
             .attr("x", width)
             .attr("y", -6)
             .style("text-anchor", "end")
-            .text("GDP");
+            .text("GDP (in millions)");
 
         // y-axis
         svg.append("g")
