@@ -1,5 +1,5 @@
-let compareWidth = 650,
-    compareHeight = 400;
+let compareWidth = 950,
+    compareHeight = 475;
 
 function updateCompareBar(dataset) {
     loadCompareBar(dataset);
@@ -35,9 +35,7 @@ function loadCompareBar(dataset) {
 
     let x = d3.scale.linear()
         .range([0, compareWidth])
-        .domain([0, d3.max(countryCompareValues, function (d) {
-            return d;
-        })]);
+        .domain([0, Math.max(...countryCompareValues)]);
 
     let y = d3.scale.ordinal()
         .rangeRoundBands([0, compareHeight], .1)
@@ -59,6 +57,7 @@ function loadCompareBar(dataset) {
     let bars = svg.append("g")
 
     countryCompareKeyValue.forEach((country) => {
+        console.log(country, x(country.value));
         bars.append("rect").attr("class", "bar")
             .attr("y", y(country.key))
             .attr("height", y.rangeBand())
